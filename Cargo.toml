@@ -1,0 +1,51 @@
+# Copyright © 2018–2019 Trevor Spiteri
+
+# Copying and distribution of this file, with or without modification,
+# are permitted in any medium without royalty provided the copyright
+# notice and this notice are preserved. This file is offered as-is,
+# without any warranty.
+
+[package]
+name = "substrate-fixed"
+version = "0.5.6"
+authors = ["Trevor Spiteri <tspiteri@ieee.org>"]
+description = "Fixed-point numbers"
+documentation = "https://docs.rs/fixed"
+repository = "https://gitlab.com/tspiteri/fixed"
+readme = "README.md"
+keywords = ["mathematics", "numerics"]
+categories = ["algorithms", "data-structures", "no-std", "science"]
+license = "MIT/Apache-2.0"
+edition = "2018"
+autobenches = false
+
+[features]
+f16 = ["half"]
+fail-on-warnings = []
+std = []
+
+[dependencies]
+typenum = "1.10"
+az = { version = "0.3", optional = true }
+half = { version = "1.4", optional = true }
+serde = { version = "1.0.60", default-features = false, optional = true }
+
+[dependencies.codec]
+default-features = false
+package = "parity-scale-codec"
+features = ["derive"]
+version = "2.0.0"
+
+[dev-dependencies]
+rand = { version = "0.7", default-features = false }
+rand_xoshiro = "0.4"
+criterion = "0.3"
+num-traits = { version = "0.2", default-features = false }
+approx = "0.3.0"
+
+[package.metadata.docs.rs]
+features = ["az", "f16", "serde", "std"]
+
+[[bench]]
+name = "bench_main"
+harness = false
