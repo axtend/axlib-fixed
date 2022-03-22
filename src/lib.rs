@@ -84,7 +84,7 @@ The conversions supported cover the following cases.
 ## Quick examples
 
 ```rust
-use substrate_fixed::types::I20F12;
+use axlib_fixed::types::I20F12;
 
 // 19/3 = 6 1/3
 let six_and_third = I20F12::from_num(19) / 3;
@@ -104,7 +104,7 @@ combinations of integer and fractional bits adding up to a total of
 eight, 16, 32, 64 or 128 bits.
 
 ```rust
-use substrate_fixed::types::{I4F4, I4F12};
+use axlib_fixed::types::{I4F4, I4F12};
 
 // −8 ≤ I4F4 < 8 with steps of 1/16 (~0.06)
 let a = I4F4::from_num(1);
@@ -292,7 +292,7 @@ use core::{
 ///
 /// ```
 /// # #[allow(unused_imports)]
-/// use substrate_fixed::prelude::*;
+/// use axlib_fixed::prelude::*;
 /// ```
 ///
 /// The prelude may grow over time as additional items see ubiquitous use.
@@ -345,7 +345,7 @@ are implemented by the Rust compiler.
 # Examples
 
 ```rust
-use substrate_fixed::{types::extra::U3, ", $s_fixed, "};
+use axlib_fixed::{types::extra::U3, ", $s_fixed, "};
 let eleven = ", $s_fixed, "::<U3>::from_num(11);
 assert_eq!(eleven, ", $s_fixed, "::<U3>::from_bits(11 << 3));
 assert_eq!(eleven, 11);

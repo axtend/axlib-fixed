@@ -5,12 +5,12 @@ modification, are permitted in any medium without royalty provided the
 copyright notice and this notice are preserved. This file is offered
 as-is, without any warranty. -->
 
-# Fixed-point numbers for substrate
-This crate ist ported from `fixed = 0.5.4`. It has been adapted to be usable within [substrate](https://github.com/paritytech/substrate) runtimes. Additionally, transcendental functions have been added (log, exp, pow, trigonometry).
+# Fixed-point numbers for axlib
+This crate ist ported from `fixed = 0.5.4`. It has been adapted to be usable within [axlib](https://github.com/paritytech/axlib) runtimes. Additionally, transcendental functions have been added (log, exp, pow, trigonometry).
 
 Please also have a look at [our encointer-js libraries](https://github.com/encointer/encointer-js/tree/master/packages/util) to learn how to parse fixpoint values for javascript UIs.
 
-The [*substrate-fixed* crate] provides fixed-point numbers.
+The [*axlib-fixed* crate] provides fixed-point numbers.
 
   * [`FixedI8`] and [`FixedU8`] are eight-bit fixed-point numbers.
   * [`FixedI16`] and [`FixedU16`] are 16-bit fixed-point numbers.
@@ -69,7 +69,7 @@ Details on other releases can be found in [*RELEASES.md*].
 ## Quick examples
 
 ```rust
-use substrate_fixed::types::I20F12;
+use axlib_fixed::types::I20F12;
 
 // 19/3 = 6 1/3
 let six_and_third = I20F12::from_num(19) / 3;
@@ -89,7 +89,7 @@ combinations of integer and fractional bits adding up to a total of
 eight, 16, 32, 64 or 128 bits.
 
 ```rust
-use substrate_fixed::types::{I4F4, I4F12};
+use axlib_fixed::types::{I4F4, I4F12};
 
 // −8 ≤ I4F4 < 8 with steps of 1/16 (~0.06)
 let a = I4F4::from_num(1);
@@ -121,19 +121,19 @@ number of fractional bits. Converting from [`I4F12`] to [`I4F4`]
 cannot use [`From`] as we have less fractional bits, so we use
 [`from_num`] instead.
 
-## Using the *substrate-fixed* crate
+## Using the *axlib-fixed* crate
 
-The *substrate-fixed* crate isn't  available on [crates.io] yet. To use
+The *axlib-fixed* crate isn't  available on [crates.io] yet. To use
 it in your crate, add it as a *git* dependency inside [*Cargo.toml*]:
 
 ```toml
 [dependencies.fixed]
 default-features = false
-git = "https://github.com/encointer/substrate-fixed"
-package = "substrate-fixed"
+git = "https://github.com/encointer/axlib-fixed"
+package = "axlib-fixed"
 ```
 
-The *substrate-fixed* crate requires rustc version 1.39.0 or later.
+The *axlib-fixed* crate requires rustc version 1.39.0 or later.
 
 ## Optional features
 
@@ -156,8 +156,8 @@ To enable features, you can add the dependency like this to
 ```toml
 [dependencies.fixed]
 default-features = false
-git = "https://github.com/encointer/substrate-fixed"
-package = "substrate-fixed"
+git = "https://github.com/encointer/axlib-fixed"
+package = "axlib-fixed"
 features = ["f16", "serde"]
 ```
 

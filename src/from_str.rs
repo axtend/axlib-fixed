@@ -515,7 +515,7 @@ An error which can be returned when parsing a fixed-point number.
 # Examples
 
 ```rust
-use substrate_fixed::{types::I16F16, ParseFixedError};
+use axlib_fixed::{types::I16F16, ParseFixedError};
 // This string is not a fixed-point number.
 let s = "something completely different (_!_!_)";
 let error: ParseFixedError = match s.parse::<I16F16>() {
