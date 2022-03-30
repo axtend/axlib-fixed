@@ -6,7 +6,7 @@
 # without any warranty.
 
 [package]
-name = "axlib-fixed"
+name = "substrate-fixed"
 version = "0.5.6"
 authors = ["Trevor Spiteri <tspiteri@ieee.org>"]
 description = "Fixed-point numbers"
